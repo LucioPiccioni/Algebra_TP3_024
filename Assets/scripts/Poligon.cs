@@ -19,20 +19,6 @@ public class Poligon
         vertexs[2] = Vector3.zero;
     }
 
-    public Poligon(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
-    {
-        vertexs[0] = vertex1;
-        vertexs[1] = vertex2;
-        vertexs[2] = vertex3;
-    }
-
-    public void SetVertexs(Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
-    {
-        vertexs[0] = vertex1;
-        vertexs[1] = vertex2;
-        vertexs[2] = vertex3;
-    }
-
     public void SetVertices(Vector3 v1, Vector3 v2, Vector3 v3)
     {
         vertices[0] = v1;

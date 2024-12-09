@@ -8,27 +8,7 @@ public class Plane
     [SerializeField] private Vector3 point;
     [SerializeField] public Vector3[] vertices;
 
-    public Vector3 Normal => normal;
-    public Vector3 Point => point;
-
     public float distance = 0.0f;
-
-    // Propiedad Center calculada a partir de los vértices
-    public Vector3 Center
-    {
-        get
-        {
-            return (vertices[0] + vertices[1] + vertices[2]) / 3;
-        }
-    }
-
-    // Constructor con normal y punto de referencia
-    public Plane(Vector3 normal, Vector3 point)
-    {
-        this.normal = normal.normalized;
-        this.distance = -Vector3.Dot(this.normal, point);
-        this.point = point;
-    }
 
     // Constructor con tres puntos que definen el plano
     public Plane(Vector3 vect1, Vector3 vect2, Vector3 vect3)
@@ -39,16 +19,10 @@ public class Plane
         vertices = new Vector3[] { vect1, vect2, vect3 }; // Almacena los vértices
     }
 
-    // Verifica si un punto está en el plano
-    public bool LiesOnPlane(Vector3 pointToCheck)
-    {
-        return Vector3.Dot(normal, pointToCheck - point) == 0;
-    }
-
     // Verifica si un punto está "en el lado positivo" del plano
-    public bool IsPositiveToThePlane(Vector3 pointToCheck)
+    public bool IsNegativeToThePlane(Vector3 pointToCheck)
     {
-        return Vector3.Dot(normal, pointToCheck - point) > 0;
+        return Vector3.Dot(normal, pointToCheck - point) <= 0;
     }
 
     // Dibuja el plano como Gizmo en el editor de Unity

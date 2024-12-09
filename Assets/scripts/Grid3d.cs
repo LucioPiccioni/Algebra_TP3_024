@@ -62,7 +62,7 @@ public class Grid3d : MonoBehaviour
 
                 for (int i = 0; i < gridPoints.Count(); i++)
                 {
-                    if (obj1Mesh.ContainAPoint(gridPoints[i]) && obj2Mesh.ContainAPoint(gridPoints[i]))
+                    if (obj1Mesh.WorkingContainAPoint(gridPoints[i]) && obj2Mesh.WorkingContainAPoint(gridPoints[i]))
                     {
                         Debug.Log($"{obj1.name} colisiona con {obj2.name}");
                         break;
