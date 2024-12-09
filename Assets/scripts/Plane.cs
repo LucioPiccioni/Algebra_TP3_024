@@ -8,14 +8,11 @@ public class Plane
     [SerializeField] private Vector3 point;
     [SerializeField] public Vector3[] vertices;
 
-    public float distance = 0.0f;
-
     // Constructor con tres puntos que definen el plano
     public Plane(Vector3 vect1, Vector3 vect2, Vector3 vect3)
     {
         normal = Vector3.Cross(vect2 - vect1, vect3 - vect1).normalized; // Normal calculada por producto cruzado
         point = vect1;  // Un punto en el plano
-        this.distance = -Vector3.Dot(normal, point);
         vertices = new Vector3[] { vect1, vect2, vect3 }; // Almacena los vértices
     }
 
